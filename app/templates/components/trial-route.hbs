@@ -1,0 +1,32 @@
+trial routing
+<div class="row">
+  <div class="col-sm-2">
+    <button {{action "showRouteMap"}} class="btn btn-lg">Show Map</button>
+    <form >
+      {{#each filterByBar as |location|}}
+      <div class="well">
+      <label for={{location.name}}>{{location.name}} -- <em>{{location.category}}</em></label>
+      <input type="checkbox" onChange= {{action (action "valueHasChanged" location) value="target.checked"}}>
+      </div>
+      {{/each}}
+    </form>
+  </div>
+  <div class="col-sm-2">
+    <h4>Selected Locations</h4>
+    <ol>
+      {{#each selectedItems as |location|}}
+      <li> <p>{{location.name}}</p>
+        {{location.latitude}}, {{location.longitude}}</li>
+      {{/each}}
+    </ol>
+  </div>
+  <div class="col-sm-8">
+    <div class="map-display">
+    </div>
+  </div>
+
+</div>
+
+
+<div class="map-display">
+</div>

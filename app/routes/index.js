@@ -9,6 +9,9 @@ export default Ember.Route.extend({
       var newLocation = this.store.createRecord('location', params);
       newLocation.save();
       this.transitionTo('index');
-    }
+    },
+    actions: {
+    
+  }
   }
 });
