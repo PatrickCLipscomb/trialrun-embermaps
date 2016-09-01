@@ -1,0 +1,125 @@
+trial routing
+    <button {{action "showRouteMap"}} class="btn btn-lg">Show Map</button>
+    <button {{action 'hideAllOptions'}}>Hide All Locations</button>
+    <button {{action 'showFilteredLocations'}}>See All Location</button>
+    <button {{action 'showFilteredBars'}}>showFilteredBars</button>
+    <button {{action 'showFilteredStores'}}>showFilteredStores</button>
+    <button {{action 'showFilteredMuseums'}}>showFilteredMuseums</button>
+    <button {{action 'showFilteredLandmarks'}}>showFilteredLandmarks</button>
+    <button {{action 'showFilteredHotels'}}>showFilteredHotels</button>
+    <button {{action 'showFilteredFood'}}>showFilteredFood</button>
+    <button {{action 'showFilteredEntertainment'}}>showFilteredEntertainment</button>
+    <button {{action 'showFilteredOther'}}>showFilteredOther</button>
+    <button {{action 'showFilteredPark'}}>showFilteredPark</button>
+    {{#if showFilteredLocations}}
+    <form >
+      {{#each sortedLocations as |location|}}
+      <div class="well">
+      <label for={{location.name}}>{{location.name}} -- <em>{{location.category}}</em></label>
+      <input type="checkbox" onChange= {{action (action "valueHasChanged" location) value="target.checked"}}>
+      </div>
+      {{/each}}
+    </form>
+    {{/if}}
+    {{#if showFilteredBars}}
+    <form >
+      {{#each filterByBar as |location|}}
+      <div class="well">
+      <label for={{location.name}}>{{location.name}} -- <em>{{location.category}}</em></label>
+      <input type="checkbox" onChange= {{action (action "valueHasChanged" location) value="target.checked"}}>
+      </div>
+      {{/each}}
+    </form>
+    {{/if}}
+    {{#if showFilteredStores}}
+    <form >
+      {{#each filterByStore as |location|}}
+      <div class="well">
+      <label for={{location.name}}>{{location.name}} -- <em>{{location.category}}</em></label>
+      <input type="checkbox" onChange= {{action (action "valueHasChanged" location) value="target.checked"}}>
+      </div>
+      {{/each}}
+    </form>
+    {{/if}}
+    {{#if showFilteredMuseums}}
+    <form >
+      {{#each filterByMuseum as |location|}}
+      <div class="well">
+      <label for={{location.name}}>{{location.name}} -- <em>{{location.category}}</em></label>
+      <input type="checkbox" onChange= {{action (action "valueHasChanged" location) value="target.checked"}}>
+      </div>
+      {{/each}}
+    </form>
+    {{/if}}
+    {{#if showFilteredLandmarks}}
+    <form >
+      {{#each filterByLandmark as |location|}}
+      <div class="well">
+      <label for={{location.name}}>{{location.name}} -- <em>{{location.category}}</em></label>
+      <input type="checkbox" onChange= {{action (action "valueHasChanged" location) value="target.checked"}}>
+      </div>
+      {{/each}}
+    </form>
+    {{/if}}
+    {{#if showFilteredHotels}}
+    <form >
+      {{#each filterByHotel as |location|}}
+      <div class="well">
+      <label for={{location.name}}>{{location.name}} -- <em>{{location.category}}</em></label>
+      <input type="checkbox" onChange= {{action (action "valueHasChanged" location) value="target.checked"}}>
+      </div>
+      {{/each}}
+    </form>
+    {{/if}}
+    {{#if showFilteredFood}}
+    <form >
+      {{#each filterByFood as |location|}}
+      <div class="well">
+      <label for={{location.name}}>{{location.name}} -- <em>{{location.category}}</em></label>
+      <input type="checkbox" onChange= {{action (action "valueHasChanged" location) value="target.checked"}}>
+      </div>
+      {{/each}}
+    </form>
+    {{/if}}
+    {{#if showFilteredEntertainment}}
+    <form >
+      {{#each filterByEntertainment as |location|}}
+      <div class="well">
+      <label for={{location.name}}>{{location.name}} -- <em>{{location.category}}</em></label>
+      <input type="checkbox" onChange= {{action (action "valueHasChanged" location) value="target.checked"}}>
+      </div>
+      {{/each}}
+    </form>
+    {{/if}}
+    {{#if showFilteredOther}}
+    <form >
+      {{#each filterByOther as |location|}}
+      <div class="well">
+      <label for={{location.name}}>{{location.name}} -- <em>{{location.category}}</em></label>
+      <input type="checkbox" onChange= {{action (action "valueHasChanged" location) value="target.checked"}}>
+      </div>
+      {{/each}}
+    </form>
+    {{/if}}
+    {{#if showFilteredPark}}
+    <form >
+      {{#each filterByPark as |location|}}
+      <div class="well">
+      <label for={{location.name}}>{{location.name}} -- <em>{{location.category}}</em></label>
+      <input type="checkbox" onChange= {{action (action "valueHasChanged" location) value="target.checked"}}>
+      </div>
+      {{/each}}
+    </form>
+    {{/if}}
+  <div class="col-sm-2">
+    <h4>Selected Locations</h4>
+    <ol>
+      {{#each selectedItems as |location|}}
+      <li> <p>{{location.name}}</p>
+        {{location.latitude}}, {{location.longitude}}</li>
+      {{/each}}
+    </ol>
+  </div>
+
+    <div class="map-display">
+    </div>
